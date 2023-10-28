@@ -1,0 +1,47 @@
+include ../includes/mixin.pug
+
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title main page in pugjs
+    link(rel="stylesheet", href="../style/header.css")
+  body
+    .page  
+      header
+        img(src="../image/logo.png", alt="")
+        .link 
+          .icon 
+            span.one 
+            span.two 
+            span.three 
+          nav 
+            ul.ulclass 
+              li: a(src="index.html") Home
+              li: a(src="contact.html") Contact
+              li: a(src="skills.html") Skills
+              li: a(src="about.html") About
+      section.landing
+        .overlay
+          .ri-te 
+            .text 
+              h3 Hi <span>I'M</span>
+              h1  Mostafa sami
+              p Full stack Web Developer
+              a(href="download") My CV
+          .le-im 
+            img(src="../image/personal.png", alt="")      
+      section.skills 
+        h1 Skills 
+        h4 html
+        h4 css
+        h4 js
+        h4 sass
+        h4 pug js
+        h4 gulp js
+      
+      
+      script(src="../js/index.js")
+      

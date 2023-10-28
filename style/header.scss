@@ -1,0 +1,178 @@
+@import "../import/responsive";
+$first-color:#d78117;
+$second-color:#05001e;
+ul{
+  list-style: none;
+}
+a{
+  text-decoration:none;
+}
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+header{
+  display:flex;
+  justify-content:space-around;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 4px;
+  z-index: 99999999999999;
+  img{
+    width: 80px;
+  }
+  .link{
+    .icon{
+      display:none;
+      position :relative;
+      width:25px;
+      height:14px;
+     $classes:( "one" , "two" , "three");
+      @each $class in $classes {
+        .#{$class}{
+          width: 100%;
+          height: 2px;
+          background-color: $second-color;
+          position: absolute;
+        }
+        .one{
+          top:0
+        }
+        .two{
+          top:50%;
+        }
+        .three{
+          top:100%
+        }
+      }
+      @include breakpoints(mobile){
+        display:flex;
+      }
+    }
+    nav{
+      ul{
+        display:flex;
+        gap:40px;
+        list-style:none;
+        transition:1s;
+        &.open{
+          opacity: 100%;
+        }
+        li{
+          @include breakpoints(mobile){
+            &:not(:last-child){
+              border-bottom: 1px solid #b5b5b5;
+            }
+            padding: 16px 28px 16px;
+            &:hover{
+              background-color:#e2e2e2;
+            }
+          }
+          a{
+            transition: 0.5s;
+            font-size: 20px;
+            color:$second-color;
+            &:hover{
+              color:$first-color;
+            }
+          }
+        }
+        @include breakpoints(mobile){
+          padding:0;
+          flex-direction: column;
+          position: absolute;
+          left: 0;
+          background-color: white;
+          margin: 0;
+          top: 80px;
+          width: 100%;
+          gap:0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+  // start section landing
+section.landing{
+  margin-top: 81px;
+  height: 72vh;
+  background-image: url("../image/landing.png");
+  background-size: cover;
+  margin: 81px 0 0 0;
+  @include breakpoints(mobile){
+    height:89vh;
+  }
+  .overlay{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background-color: #ffffffa3;
+    @include breakpoints(mobile){
+      flex-direction : column ;
+      padding:100px 0;
+      background-color: #84848566;
+      height: 61vh;
+    }
+    .ri-te{
+      @include breakpoints(mobile){
+        margin-bottom:40px;
+        text-align:center;
+      }
+      .text{
+        h3{
+          font-size:36px;
+          margin:0;
+          span{
+            font-size: 30px;
+          }
+          color: $second-color;
+        }
+        h1{
+          font-size: 42px;
+          margin : 20px 0;
+          color:$first-color;
+        }
+        p{
+          font-size: 20px;
+          color: $second-color;
+          font-weight:bold;
+        }
+        a{
+          background-color: $first-color;
+          padding: 5px 20px;
+          color: white;
+          font-weight: bold;
+          border-radius: 15px;
+        }
+      }
+    }
+    .le-im{
+      position:relative;
+            width: 300px;
+        height: 300px;
+        background-color: #4a4a6b;
+        border-radius: 10px;
+        @include breakpoints (mobile){
+          background-color: #84848566;
+        }
+      img{
+        width: 370px;
+        position: relative;
+        bottom: -10px;
+        right: -15px;
+        @include breakpoints(mobile){
+          width:280px;
+          bottom:0;
+        }
+      }
+    }
+  }
+}
+// end section landing
